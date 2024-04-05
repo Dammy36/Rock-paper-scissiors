@@ -61,8 +61,9 @@ function playGame(playerMove) {
   document.querySelector(".js-result").innerHTML = result;
 
   document.querySelector(".js-moves").innerHTML = `You
-      <img src="images/${playerMove}-emoji.png" class="move-icon"  />
-      <img src="images/${ComputeMove}-emoji.png" class="move-icon"  />
+      <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/872/original/rock-emoji.png?1712269917 ${playerMove}" class="move-icon"  />
+      <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/873/original/scissors-emoji.png?1712269937"
+        alt="scissors ${ComputeMove}" class="move-icon"  />
       Computer`;
 }
 
