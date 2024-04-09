@@ -19,7 +19,7 @@ let intervalId;
 
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);
@@ -30,16 +30,28 @@ function autoPlay() {
   }
 }
 
+document.querySelector(".js-rock-button").addEventListener("click", () => {
+  playGame("rock");
+});
+
+document.querySelector(".js-paper-button").addEventListener("click", () => {
+  playGame("paper");
+});
+
+document.querySelector(".js-scissors-button").addEventListener("click", () => {
+  playGame("scissors");
+});
+
 function playGame(playerMove) {
   const computeMove = pickComputerMove();
 
   let result = "";
   if (playerMove === "scissors") {
-    if (computeMoveomputeMove === "rock") {
+    if (computeMove === "rock") {
       result = "lose";
-    } else if (computeMoveomputeMove === "paper") {
+    } else if (computeMove === "paper") {
       result = "you win";
-    } else if (computeMoveomputeMove === "scissors") {
+    } else if (computeMove === "scissors") {
       result = "tie";
     }
   } else if (playerMove === "paper") {
@@ -78,6 +90,15 @@ function playGame(playerMove) {
 
   document.querySelector(".js-moves").innerHTML = `You
       <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/872/original/rock-emoji.png?1712269917 ${playerMove}" class="move-icon"  />
+
+<img
+        src="
+https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/873/original/scissors-emoji.png?1712269937 ${playerMove}"
+        class="move-icon"
+        alt=" scissors"
+      />
+
+
       <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/873/original/scissors-emoji.png?1712269937"
         alt="scissors ${computeMove}" class="move-icon"  />
       Computer`;
