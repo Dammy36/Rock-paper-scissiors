@@ -42,6 +42,17 @@ document.querySelector(".js-scissors-button").addEventListener("click", () => {
   playGame("scissors");
 });
 
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r") {
+    playGame("rock");
+  } else if (event.key === "p") {
+    playGame("paper");
+  } else if (event.key === "s") {
+    playGame("scissors");
+  }
+  s;
+});
+
 function playGame(playerMove) {
   const computeMove = pickComputerMove();
 
@@ -90,15 +101,7 @@ function playGame(playerMove) {
 
   document.querySelector(".js-moves").innerHTML = `You
       <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/872/original/rock-emoji.png?1712269917 ${playerMove}" class="move-icon"  />
-
-<img
-        src="
-https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/873/original/scissors-emoji.png?1712269937 ${playerMove}"
-        class="move-icon"
-        alt=" scissors"
-      />
-
-
+      
       <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/873/original/scissors-emoji.png?1712269937"
         alt="scissors ${computeMove}" class="move-icon"  />
       Computer`;
